@@ -2,8 +2,6 @@ import { defineConfig } from "astro/config";
 import preact from "@astrojs/preact";
 import sitemap from "@astrojs/sitemap";
 
-import netlify from "@astrojs/netlify";
-
 // https://astro.build/config
 export default defineConfig({
 	site: "https://waseidel.netlify.app",
@@ -29,6 +27,4 @@ export default defineConfig({
 			prefixDefaultLocale: false,
 		},
 	},
-	output: "server",
-	adapter: netlify(),
 });
