@@ -1,0 +1,52 @@
+---
+import ThemeIcon from "@/components/ThemeIcon.astro";
+import Link from "@/components/NavLink.astro";
+import PortfolioLink from "@/components/PortfolioLink.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+import { getLangFromUrl, useTranslations } from "@/i18n/utils.ts";
+import LanguagePicker from "./LanguagePicker.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { currentLocale } = Astro;
+---
+
+<nav>
+  <div>
+    <Link href={getRelativeLocaleUrl(currentLocale ?? "", "")}
+      >{t("nav.home")}</Link
+    >
+    <Link href={getRelativeLocaleUrl(currentLocale ?? "", "blog")}
+      >{t("nav.blog")}</Link
+    >
+    <PortfolioLink href={getRelativeLocaleUrl(currentLocale ?? "", "portfolio")}
+      >{t("nav.portfolio")}</PortfolioLink
+    >
+    <Link href={getRelativeLocaleUrl(currentLocale ?? "", "about")}
+      >{t("nav.about")}</Link
+    >
+    <Link href={getRelativeLocaleUrl(currentLocale ?? "", "setup")}
+      >{t("nav.setup")}</Link
+    >
+    |
+    <Link href="https://flowcv.com/resume/eevk7vfmfl">CV</Link>
+  </div>
+  <div>
+    <LanguagePicker />
+    <ThemeIcon />
+  </div>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-between;
+    div {
+      display: flex;
+      gap: 1.3rem;
+      flex-wrap: wrap;
+    }
+  }
+</style>
