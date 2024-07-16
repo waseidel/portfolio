@@ -14,9 +14,15 @@
     "@astrojs/preact": "^3.5.0",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.11.5",
+    "astro-icon": "^1.1.0",
     "preact": "^10.22.1",
     "prettier-plugin-astro": "^0.14.0",
+    "tailwindcss": "^3.4.4",
     "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "@iconify-json/mdi": "^1.1.67"
   }
 }

@@ -1,26 +1,13 @@
 ---
 interface Props {
-  href: string;
+	href: string;
 }
 
 const { href } = Astro.props;
 
-const isUrlInCurrentLink = Astro.url.pathname == href;
+const isUrlInCurrentLink = Astro.url.pathname === href;
 ---
 
-<a
-  href={href}
-  style=`text-decoration: ${isUrlInCurrentLink? 'underline': 'none'};`
->
+<a href={href} class=`${isUrlInCurrentLink? 'border-b-2': null}`>
   <slot />
 </a>
-
-<style>
-  a {
-    text-underline-offset: 5px;
-  }
-
-  a:hover {
-    text-decoration: underline !important;
-  }
-</style>
